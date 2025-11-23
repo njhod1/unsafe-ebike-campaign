@@ -41,15 +41,35 @@
     <li>Youth riders using motorcycle-style e-bikes at dangerous speeds</li>
   </ul>
 
-  <h2>Template Letter to Your MP</h2>
-  <div class="letter-box">
-    <p><strong>Copy and paste this letter to send to your local federal member:</strong></p>
-    <p>Dear [Member’s Name],</p>
-    <p>I am writing to express my concern about the 2021 amendment to the Motor Vehicle Standards Act, which removed e-bikes from the definition of road vehicles. Since this change, unsafe imports have flooded the market, leading to crashes, injuries, and battery fires.</p>
-    <p>Advocacy groups such as Pedal Power ACT and We Ride Australia have documented how the removal of international safety standards eliminated protections like anti-tampering clauses. Without these safeguards, high-powered e-bikes capable of speeds well beyond 25 km/h are being sold illegally.</p>
-    <p>I urge you to support reinstating e-bikes under the Motor Vehicle Standards Act, ensuring all imports meet internationally recognised safety standards.</p>
-    <p>Yours sincerely,<br>[Your Name]</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<h2>Personalize Your Letter ✍️</h2>
+<div class="letter-box">
+  <p>Fill in your details to generate a personalized PDF letter to submit to your MP.</p>
+  <form id="letterForm">
+    <label for="userName">Your Full Name (Required):</label>
+    <input type="text" id="userName" name="userName" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+    <label for="userAddress">Your Address/Postcode (Required for MP to action):</label>
+    <input type="text" id="userAddress" name="userAddress" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+
+    <label for="mpName">Local MP Name (e.g., The Hon. Julian Hill MP):</label>
+    <input type="text" id="mpName" name="mpName" style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;" placeholder="Optional, will default to [Member’s Name]">
+
+    <label for="electorate">Electorate:</label>
+    <input type="text" id="electorate" name="electorate" style="width:100%; padding:8px; margin-bottom:20px; box-sizing:border-box;" placeholder="Optional, will default to [Electorate]">
+
+    <button type="submit" style="background:#cc0000; color:#fff; padding:15px 25px; border:none; border-radius:5px; cursor:pointer;">Generate PDF Letter 📥</button>
+  </form>
+</div>
+
+<div id="pdfContent" style="display: none; padding: 20px; font-size: 11pt; line-height: 1.5;">
   </div>
+
+<div class="cta">
+  <a href="https://www.aph.gov.au/Senators_and_Members" target="_blank">Find My MP & Their Contact Details</a>
+</div>
 
   <div class="cta">
     <a href="https://www.aph.gov.au/Senators_and_Members" target="_blank">Find My MP</a>
@@ -77,6 +97,90 @@
   <p>This site is for advocacy purposes. Affiliate links support hosting and outreach.</p>
   <p>Share this campaign: <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
 </footer>
+
+<script>
+window.jsPDF = window.jspdf.jsPDF; // Standardize for browser use
+
+document.getElementById('letterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const userName = document.getElementById('userName').value;
+    const userAddress = document.getElementById('userAddress').value;
+    const mpName = document.getElementById('mpName').value || '[Member’s Name]';
+    const electorate = document.getElementById('electorate').value || '[Electorate]';
+    const currentDate = new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    // 1. CONSTRUCT THE LETTER CONTENT
+    const letterTemplate = `
+        <p style="margin-bottom: 30px;">${userName}<br>${userAddress}<br>${currentDate}</p>
+
+        <p style="margin-bottom: 30px;">The Hon. ${mpName} MP<br>Member for ${electorate}<br>Parliament House<br>Canberra ACT 2600</p>
+
+        <p style="margin-bottom: 15px;">Dear ${mpName.split(' ')[2] || 'Member'},</p>
+
+        <p style="margin-bottom: 15px;">I am writing to express my deep concern about the Federal Government’s 2021 amendment to the Motor Vehicle Standards Act, which removed e‑bikes from the definition of road vehicles. While the intention may have been to encourage micromobility, the unintended consequence has been a surge in unsafe, illegal imports that now pose serious risks to Australian communities.</p>
+
+        <p style="margin-bottom: 15px;">Since the exemption, the market has been flooded with unroadworthy motorbikes masquerading as e‑bikes, many with overpowered motors, untested batteries, and poor design. These machines are often used by vulnerable riders, including children and teenagers, and have been linked to serious crashes, injuries, and battery fires.</p>
+        
+        <p style="margin-bottom: 15px;">Cycling organisations such as Pedal Power ACT and We Ride Australia have documented how the removal of international safety standards (EN15194) eliminated critical protections like anti‑tampering clauses, which previously prevented dangerous aftermarket modifications. Without these safeguards, we are now seeing high‑powered e‑bikes capable of speeds well beyond 25 km/h being sold and ridden illegally on public roads.</p>
+        
+        <p style="margin-bottom: 15px;">The consequences are visible in our communities:</p>
+        <ul style="margin-left: 20px;">
+          <li>Unsafe imports flooding the market since 2021</li>
+          <li>Crashes and fatalities involving non‑compliant machines</li>
+          <li>Battery fires linked to poor‑quality imports</li>
+          <li>Youth riders using motorcycle‑style e‑bikes at dangerous speeds in crowded public spaces</li>
+        </ul>
+        
+        <p style="margin-bottom: 15px;">I urge you to support the reinstatement of e‑bikes under the Motor Vehicle Standards Act, ensuring that all imports meet internationally recognised safety standards. This would restore consistency across states and territories, protect vulnerable road users, and prevent further harm.</p>
+        
+        <p style="margin-bottom: 15px;">Safe and legal e‑bikes are an excellent option for short trips, offering affordable, healthy, and sustainable transport. But without proper regulation, the current situation undermines public confidence and endangers lives.</p>
+        
+        <p style="margin-bottom: 40px;">I respectfully ask that you raise this issue in Parliament and advocate for urgent legislative reform to close this dangerous loophole.</p>
+        
+        <p>Yours sincerely,<br><br>${userName}</p>
+
+        <p style="font-size: 8pt; margin-top: 50px; color: #666;">
+          <br>
+          *Sources for credibility: Pedal Power ACT, We Ride Australia, Flow Mountain Bike.
+        </p>
+    `;
+
+    document.getElementById('pdfContent').innerHTML = letterTemplate;
+
+    // 2. GENERATE PDF USING html2canvas and jsPDF
+    const pdfContent = document.getElementById('pdfContent');
+
+    html2canvas(pdfContent, { 
+      scale: 2, // Improve quality 
+      useCORS: true 
+    }).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new window.jsPDF('p', 'mm', 'a4');
+        
+        // Calculate dimensions to fit on A4
+        const imgWidth = 210; 
+        const pageHeight = 297;  
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        let heightLeft = imgHeight;
+
+        let position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        // For content spanning multiple pages (unlikely here, but good practice)
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        pdf.save('Letter-to-MP-Ebike-Safety.pdf');
+    });
+});
+</script>
 
 </body>
 </html>
