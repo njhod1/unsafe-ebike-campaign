@@ -2,31 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Stop Unsafe E-Bike Imports in Australia – Template Letter to MPs</title>
-  <meta name="description" content="Learn how Australia's 2021 e-bike legislation change enabled unsafe imports. Copy our template letter to your MP and demand reform.">
-  <meta name="keywords" content="Australia e-bike legislation, illegal e-bike imports, unsafe e-bikes, battery fires, template letter to MP">
+  <title>Urgent: Stop Unsafe E-Bike Imports in Australia – Template Letter to MPs</title>
+  <meta name="description" content="Join the urgent Australian campaign to reverse the 2021 e-bike law change, generate a personalized letter to your Federal MP, and demand safer roads and compliant imports.">
+  <meta name="keywords" content="Australia e-bike legislation, illegal e-bike imports, unsafe e-bikes, battery fires, template letter to MP, federal member lookup, postcodes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Canonical link for SEO -->
+  <link rel="canonical" href="https://yourebikecampaign.org/">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="URGENT: Protect Australians from Unsafe E-Bikes">
+  <meta property="og:description" content="Join the campaign to reverse unsafe e-bike imports. Generate and send your letter to your Federal MP today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourebikecampaign.org/">
+  <meta property="og:image" content="https://yourebikecampaign.org/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stop Unsafe E-Bike Imports in Australia">
+  <meta name="twitter:description" content="Generate our template letter and demand legislative reform from your Federal MP.">
+  <meta name="twitter:image" content="https://yourebikecampaign.org/og-image.jpg">
+
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#f9f9f9; color:#333; }
-    header { background:#004d40; color:#fff; padding:20px; text-align:center; }
-    header h1 { margin:0; font-size:2em; }
+    /* Base Styles */
+    body { font-family: 'Inter', Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#f0f7f4; color:#333; }
+    header { background:#004d40; color:#fff; padding:30px 20px; text-align:center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    header h1 { margin:0; font-size:2.5em; font-weight: 700; }
+    header p { font-size: 1.1em; margin-top: 5px; }
     section { padding:20px; max-width:900px; margin:auto; }
-    h2 { color:#004d40; margin-top:30px; }
-    .letter-box { background:#fff; border:1px solid #ccc; padding:20px; margin:20px 0; }
-    .cta { text-align:center; margin:30px 0; }
-    .cta a { background:#00796b; color:#fff; padding:12px 20px; text-decoration:none; border-radius:5px; }
-    .cta a:hover { background:#004d40; }
-    footer { background:#eee; padding:20px; text-align:center; font-size:0.9em; }
-    .monetisation { background:#fff; border:1px solid #ccc; padding:20px; margin-top:40px; }
+    h2 { color:#004d40; margin-top:30px; border-bottom: 2px solid #e0f2f1; padding-bottom: 5px; }
+    h3 { color:#00796b; margin-top:20px; }
+
+    /* Action Box / Form Styling */
+    .letter-box { background:#fff; border:1px solid #00796b; border-radius: 12px; padding:30px; margin:20px 0; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); }
+    label { display: block; font-weight: 600; margin-bottom: 5px; color: #004d40; }
+    input[type="text"] { border: 1px solid #ccc; border-radius: 6px; transition: border-color 0.3s; }
+    input[type="text"]:focus { border-color: #00796b; outline: none; box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); }
+
+    /* Call to Action Buttons */
+    .cta button, .cta a { 
+        transition: all 0.2s ease; 
+        font-weight: 700; 
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: center;
+        display: inline-block;
+    }
+    .main-btn { 
+        background:#cc0000; 
+        color:#fff; 
+        padding:15px 25px; 
+        border:none; 
+        border-radius:8px; 
+        cursor:pointer; 
+        box-shadow: 0 4px 8px rgba(204, 0, 0, 0.4);
+    }
+    .main-btn:hover { background:#a30000; box-shadow: 0 6px 12px rgba(204, 0, 0, 0.6); transform: translateY(-2px); }
+
+    /* Output/Copy Section */
+    #letterOutput {
+        padding: 20px;
+        background: #e0f2f1;
+        border: 2px solid #004d40;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+    #outputArea {
+        min-height: 400px;
+        resize: vertical;
+        border-radius: 6px;
+    }
+
+    /* Info Boxes and Links */
+    .info-box { background:#fff3e0; border:1px solid #ffcc80; border-radius: 8px; padding:15px; margin-bottom:15px; }
+    .info-box a { background:#ff9800; color:#fff; padding:8px 15px; text-decoration:none; border-radius:5px; display:inline-block; margin-top:8px; font-weight: 600;}
+    .info-box a:hover { background:#e68a00; }
+
+    .monetisation, .links { background:#fff; border:1px solid #ccc; padding:20px; margin-top:40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+    ul { list-style: disc; padding-left: 20px; }
     .monetisation ul { list-style:none; padding:0; }
     .monetisation li { margin:10px 0; }
+    .monetisation a { color: #00796b; text-decoration: none; font-weight: 600; }
+    .monetisation a:hover { text-decoration: underline; }
+
+    footer { background:#004d40; color:#e0f2f1; padding:20px; text-align:center; font-size:0.9em; margin-top: 40px; }
+    footer a { color: #80cbc4; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Protect Australians from Unsafe E-Bikes</h1>
-  <p>Join the campaign to reverse the 2021 exemption that allowed unsafe imports.</p>
+  <p>Join the campaign to reverse the 2021 exemption that allowed dangerous imports.</p>
 </header>
 
 <section>
@@ -35,41 +103,52 @@
 
   <h2>Why It Matters</h2>
   <ul>
-    <li>Unsafe imports with poor battery design</li>
+    <li>Unsafe imports with poor battery design leading to **battery fires**</li>
     <li>Crashes and fatalities involving non-compliant machines</li>
-    <li>Battery fires linked to low-quality imports</li>
-    <li>Youth riders using motorcycle-style e-bikes at dangerous speeds</li>
+    <li>Overpowered e-bikes capable of speeds well beyond 25 km/h used illegally by youth riders</li>
   </ul>
 
-<h2>Personalize Your Letter ✍️</h2>
-<div class="letter-box">
-  <p>Fill in your details to generate a personalized PDF letter to submit to your MP.</p>
-  <form id="letterForm">
-    <label for="userName">Your Full Name (Required):</label>
-    <input type="text" id="userName" name="userName" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+  <h2>Generate Your Personalized Letter of Concern</h2>
+  <div class="letter-box">
+    <p>Complete your details and use the tool below to generate the custom letter to send to your local Federal MP.</p>
+    
+    <form id="letterForm">
+      
+      <label for="userName">Your Full Name (Required):</label>
+      <input type="text" id="userName" name="userName" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
 
-    <label for="userAddress">Your Address/Postcode (Required for MP to action):</label>
-    <input type="text" id="userAddress" name="userAddress" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;">
+      <label for="userAddress">Your Address / Suburb / Postcode (Required for MP to confirm you are a constituent):</label>
+      <input type="text" id="userAddress" name="userAddress" required style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;" placeholder="e.g., 123 Main St, Sydney NSW 2000">
 
-    <label for="mpName">Local MP Name (e.g., The Hon. Julian Hill MP):</label>
-    <input type="text" id="mpName" name="mpName" style="width:100%; padding:8px; margin-bottom:15px; box-sizing:border-box;" placeholder="Optional, will default to [Member’s Name]">
+      <div class="info-box">
+        <strong>STEP 1: Find Your MP</strong>
+        <p>To address the letter correctly, you need the full name of your local Federal Member of Parliament. If you don't know it, use the official link below:</p>
+        <a href="https://www.aec.gov.au/electorate" target="_blank">Find My Electorate and MP Name (AEC)</a>
+      </div>
 
-    <label for="electorate">Electorate:</label>
-    <input type="text" id="electorate" name="electorate" style="width:100%; padding:8px; margin-bottom:20px; box-sizing:border-box;" placeholder="Optional, will default to [Electorate]">
+      <label for="mpName">Local MP Name (Required):</label>
+      <input type="text" id="mpName" name="mpName" required style="width:100%; padding:8px; margin-bottom:20px; box-sizing:border-box;" placeholder="e.g., The Hon. Julian Hill MP">
 
-    <button type="submit" style="background:#cc0000; color:#fff; padding:15px 25px; border:none; border-radius:5px; cursor:pointer;">Generate PDF Letter 📥</button>
-  </form>
-</div>
+      <button type="submit" class="main-btn">Generate Letter Text & Email 📧</button>
+    </form>
 
-<div id="pdfContent" style="display: none; padding: 20px; font-size: 11pt; line-height: 1.5;">
-  </div>
-
-<div class="cta">
-  <a href="https://www.aph.gov.au/Senators_and_Members" target="_blank">Find My MP & Their Contact Details</a>
-</div>
-
-  <div class="cta">
-    <a href="https://www.aph.gov.au/Senators_and_Members" target="_blank">Find My MP</a>
+    <div id="letterOutput" style="display:none; margin-top:30px;">
+      <h3>Copy and Send Your Letter:</h3>
+      <p>The personalized letter is ready below. **Copy the text** and use the **Email to MP** link (if available) or look up your MP's official contact page using the button at the bottom of the form.</p>
+      
+      <textarea id="outputArea" rows="20" style="width:100%; padding:10px; font-family:monospace; font-size:12px; border:1px solid #004d40;"></textarea>
+      
+      <p style="margin-top: 20px; text-align: center;">
+        <!-- The mailto: link is populated by JS on form submission -->
+        <a id="emailLink" href="#" style="background:#00796b; color:#fff; padding:12px 20px; text-decoration:none; border-radius:5px; margin-right:10px; font-weight: 700;">Email to MP</a>
+        <button onclick="copyLetterText()" style="background:#004d40; color:#fff; padding:12px 20px; border:none; border-radius:5px; cursor:pointer; font-weight: 700;">Copy Text</button>
+      </p>
+      
+      <div class="info-box" style="margin-top: 20px; background: #ffebee; border: 1px solid #ffcdd2;">
+        <strong>IMPORTANT:</strong> If the email link doesn't work, you must find your MP's official email address or contact form on the APH website and paste the letter text there.
+        <a href="https://www.aph.gov.au/Senators_and_Members" target="_blank" style="background:#d32f2f;">Find MP's Contact Details</a>
+      </div>
+    </div>
   </div>
 
   <h2>Credible Sources</h2>
@@ -79,103 +158,136 @@
     <li><a href="https://flowmountainbike.com" target="_blank">Flow Mountain Bike – E-Bike Dilemma</a></li>
   </ul>
 
+  <div class="links">
+    <h2>Useful Resources</h2>
+    <ul>
+      <li><a href="campaign-brochure.pdf" target="_blank">Download Printable A4 Brochure/Poster</a> (Requires uploading this PDF to your repo!)</li>
+      <li><a href="https://www.productsafety.gov.au" target="_blank">Australian Product Safety Guidelines</a></li>
+      <li><a href="https://www.infrastructure.gov.au" target="_blank">Department of Infrastructure – Vehicle Standards</a></li>
+    </ul>
+  </div>
+
   <div class="monetisation">
     <h2>Support Safe Cycling</h2>
     <p>Your support helps spread awareness and keep this campaign alive.</p>
     <ul>
       <li><a href="https://ko-fi.com" target="_blank">Donate via Ko-fi</a></li>
       <li><a href="https://paypal.me" target="_blank">Support via PayPal</a></li>
-      <li><a href="https://example-affiliate-link.com" target="_blank">Recommended Safe E-Bikes & Gear</a></li>
+      <li><a href="https://example-affiliate-link.com" target="_blank">Shop **Australian Compliant** E-Bikes and Safety Gear (Affiliate Link)</a></li>
     </ul>
   </div>
 </section>
 
 <footer>
   <p>This site is for advocacy purposes. Affiliate links support hosting and outreach.</p>
-  <p>Share this campaign: <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
+  <p>All content is factual and sourced from credible organisations. Share this campaign: 
+    <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
 </footer>
 
 <script>
-window.jsPDF = window.jspdf.jsPDF; // Standardize for browser use
+// Function to copy text to clipboard using the older, more reliable method in sandboxed iframes
+function copyLetterText() {
+    const outputArea = document.getElementById('outputArea');
+    outputArea.select();
+    outputArea.setSelectionRange(0, 99999); // For mobile devices
+    
+    try {
+        const successful = document.execCommand('copy');
+        const msg = successful ? 'Letter text copied to your clipboard!' : 'Copy failed. Please copy the text manually.';
+        // Use a simple modal/alert box replacement
+        const copyMessage = document.createElement('div');
+        copyMessage.textContent = msg;
+        copyMessage.style.cssText = 'position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#004d40; color:white; padding:15px 30px; border-radius:8px; z-index:1000; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.5);';
+        document.body.appendChild(copyMessage);
+        setTimeout(() => {
+            document.body.removeChild(copyMessage);
+        }, 2000);
+
+    } catch (err) {
+        console.error('Copy command failed:', err);
+    }
+}
 
 document.getElementById('letterForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const userName = document.getElementById('userName').value;
-    const userAddress = document.getElementById('userAddress').value;
-    const mpName = document.getElementById('mpName').value || '[Member’s Name]';
-    const electorate = document.getElementById('electorate').value || '[Electorate]';
+    const userName = document.getElementById('userName').value.trim();
+    const userAddress = document.getElementById('userAddress').value.trim();
+    // MP name is now required
+    const mpName = document.getElementById('mpName').value.trim();
+    
+    // Simple validation for required fields
+    if (!userName || !userAddress || !mpName) {
+        alert("Please fill out all required fields.");
+        return;
+    }
+
     const currentDate = new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+    
+    // Extract the Member's last name for the salutation (e.g., 'The Hon. Julian Hill MP' -> 'Hill')
+    const mpNameParts = mpName.split(' ');
+    let salutation = 'Member';
+    if (mpNameParts.length >= 3) {
+        salutation = mpNameParts[mpNameParts.length - 2]; 
+    }
 
-    // 1. CONSTRUCT THE LETTER CONTENT
-    const letterTemplate = `
-        <p style="margin-bottom: 30px;">${userName}<br>${userAddress}<br>${currentDate}</p>
+    // Replace the default Electorate placeholder with the last part of the address (Postcode/Suburb)
+    const addressParts = userAddress.split(',').pop().trim();
+    
+    // Build the plain text letter
+    const letterText = `
+${userName}
+${userAddress}
+${currentDate}
 
-        <p style="margin-bottom: 30px;">The Hon. ${mpName} MP<br>Member for ${electorate}<br>Parliament House<br>Canberra ACT 2600</p>
+The Hon. ${mpName}
+Member for ${addressParts}
 
-        <p style="margin-bottom: 15px;">Dear ${mpName.split(' ')[2] || 'Member'},</p>
+Parliament House
+Canberra ACT 2600
 
-        <p style="margin-bottom: 15px;">I am writing to express my deep concern about the Federal Government’s 2021 amendment to the Motor Vehicle Standards Act, which removed e‑bikes from the definition of road vehicles. While the intention may have been to encourage micromobility, the unintended consequence has been a surge in unsafe, illegal imports that now pose serious risks to Australian communities.</p>
+Dear ${salutation},
 
-        <p style="margin-bottom: 15px;">Since the exemption, the market has been flooded with unroadworthy motorbikes masquerading as e‑bikes, many with overpowered motors, untested batteries, and poor design. These machines are often used by vulnerable riders, including children and teenagers, and have been linked to serious crashes, injuries, and battery fires.</p>
+I am writing to express my deep concern about the Federal Government’s 2021 amendment to the Motor Vehicle Standards Act, which removed e-bikes from the definition of road vehicles. While the intention may have been to encourage micromobility, the unintended consequence has been a surge in unsafe, illegal imports that now pose serious risks to Australian communities.
+
+Since the exemption, the market has been flooded with unroadworthy motorbikes masquerading as e-bikes, many with overpowered motors, untested batteries, and poor design. These machines are often used by vulnerable riders, including children and teenagers, and have been linked to serious crashes, injuries, and battery fires.
+
+Cycling organisations such as Pedal Power ACT and We Ride Australia have documented how the removal of international safety standards (EN15194) eliminated critical protections like anti-tampering clauses, which previously prevented dangerous aftermarket modifications. Without these safeguards, we are now seeing high-powered e-bikes capable of speeds well beyond 25 km/h being sold and ridden illegally on public roads.
+
+The consequences are visible in our communities:
+- Unsafe imports flooding the market since 2021
+- Crashes and fatalities involving non-compliant machines
+- Battery fires linked to poor-quality imports
+- Youth riders using motorcycle-style e-bikes at dangerous speeds in crowded public spaces
+
+I urge you to support the reinstatement of e-bikes under the Motor Vehicle Standards Act, ensuring that all imports meet internationally recognised safety standards. This would restore consistency across states and territories, protect vulnerable road users, and prevent further harm.
+
+Safe and legal e-bikes are an excellent option for short trips, offering affordable, healthy, and sustainable transport. But without proper regulation, the current situation undermines public confidence and endangers lives.
+
+I respectfully ask that you raise this issue in Parliament and advocate for urgent legislative reform to close this dangerous loophole.
+
+Yours sincerely,
+
+${userName}
+
+*Sources for credibility: Pedal Power ACT, We Ride Australia, Flow Mountain Bike.
+`;
         
-        <p style="margin-bottom: 15px;">Cycling organisations such as Pedal Power ACT and We Ride Australia have documented how the removal of international safety standards (EN15194) eliminated critical protections like anti‑tampering clauses, which previously prevented dangerous aftermarket modifications. Without these safeguards, we are now seeing high‑powered e‑bikes capable of speeds well beyond 25 km/h being sold and ridden illegally on public roads.</p>
-        
-        <p style="margin-bottom: 15px;">The consequences are visible in our communities:</p>
-        <ul style="margin-left: 20px;">
-          <li>Unsafe imports flooding the market since 2021</li>
-          <li>Crashes and fatalities involving non‑compliant machines</li>
-          <li>Battery fires linked to poor‑quality imports</li>
-          <li>Youth riders using motorcycle‑style e‑bikes at dangerous speeds in crowded public spaces</li>
-        </ul>
-        
-        <p style="margin-bottom: 15px;">I urge you to support the reinstatement of e‑bikes under the Motor Vehicle Standards Act, ensuring that all imports meet internationally recognised safety standards. This would restore consistency across states and territories, protect vulnerable road users, and prevent further harm.</p>
-        
-        <p style="margin-bottom: 15px;">Safe and legal e‑bikes are an excellent option for short trips, offering affordable, healthy, and sustainable transport. But without proper regulation, the current situation undermines public confidence and endangers lives.</p>
-        
-        <p style="margin-bottom: 40px;">I respectfully ask that you raise this issue in Parliament and advocate for urgent legislative reform to close this dangerous loophole.</p>
-        
-        <p>Yours sincerely,<br><br>${userName}</p>
+    // Populate the output area
+    const outputArea = document.getElementById('outputArea');
+    outputArea.value = letterText.trim();
+    document.getElementById('letterOutput').style.display = 'block';
 
-        <p style="font-size: 8pt; margin-top: 50px; color: #666;">
-          <br>
-          *Sources for credibility: Pedal Power ACT, We Ride Australia, Flow Mountain Bike.
-        </p>
-    `;
-
-    document.getElementById('pdfContent').innerHTML = letterTemplate;
-
-    // 2. GENERATE PDF USING html2canvas and jsPDF
-    const pdfContent = document.getElementById('pdfContent');
-
-    html2canvas(pdfContent, { 
-      scale: 2, // Improve quality 
-      useCORS: true 
-    }).then(canvas => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new window.jsPDF('p', 'mm', 'a4');
-        
-        // Calculate dimensions to fit on A4
-        const imgWidth = 210; 
-        const pageHeight = 297;  
-        const imgHeight = canvas.height * imgWidth / canvas.width;
-        let heightLeft = imgHeight;
-
-        let position = 0;
-
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-
-        // For content spanning multiple pages (unlikely here, but good practice)
-        while (heightLeft >= 0) {
-            position = heightLeft - imgHeight;
-            pdf.addPage();
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-        }
-
-        pdf.save('Letter-to-MP-Ebike-Safety.pdf');
-    });
+    // Create the email link
+    const subject = encodeURIComponent("URGENT: Reinstate E-Bikes under Motor Vehicle Standards Act");
+    const body = encodeURIComponent(letterText.trim());
+    const emailLink = document.getElementById('emailLink');
+    
+    // Set mailto: link for easy emailing
+    emailLink.href = `mailto:?subject=${subject}&body=${body}`;
+    
+    // Scroll down to the output area
+    outputArea.scrollIntoView({ behavior: 'smooth' });
 });
 </script>
 
