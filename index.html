@@ -218,35 +218,57 @@ document.getElementById('letterForm').addEventListener('submit', function(e) {
     
     // Simple validation for required fields
     if (!userName || !userAddress || !mpName) {
-        alert("Please fill out all required fields.");
+        // Updated to use the custom alert replacement
+        const validationMessage = document.createElement('div');
+        validationMessage.textContent = "Please fill out all required fields.";
+        validationMessage.style.cssText = 'position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#cc0000; color:white; padding:15px 30px; border-radius:8px; z-index:1000; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.5);';
+        document.body.appendChild(validationMessage);
+        setTimeout(() => {
+            document.body.removeChild(validationMessage);
+        }, 3000);
         return;
     }
 
     const currentDate = new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
     
-    // Extract the Member's last name for the salutation (e.g., 'The Hon. Julian Hill MP' -> 'Hill')
-    const mpNameParts = mpName.split(' ');
-    let salutation = 'Member';
-    if (mpNameParts.length >= 3) {
-        salutation = mpNameParts[mpNameParts.length - 2]; 
-    }
-
-    // Replace the default Electorate placeholder with the last part of the address (Postcode/Suburb)
+    // Logic for Address block: Use the last part of the user address as the Electorate placeholder
     const addressParts = userAddress.split(',').pop().trim();
     
+    // --- UPDATED FORMAL SALUTATION LOGIC ---
+    let formalSalutation = 'Member';
+    const nameWithoutSuffix = mpName.replace(/ MP$/i, '').trim(); 
+    const parts = nameWithoutSuffix.split(' ');
+    
+    const surname = parts[parts.length - 1]; // e.g., Scamps
+    
+    // Attempt to match a formal title prefix (e.g., Dr, Senator, Mr, Ms, Hon)
+    // We use /i for case-insensitivity and filter out "The Hon" to just get the title
+    const titleMatch = nameWithoutSuffix.match(/(Dr|Senator|Mr|Ms)\.?\s+/i);
+    
+    if (titleMatch) {
+        // Use detected title + surname (e.g., Dr Scamps)
+        const title = titleMatch[1].replace(/[.]/g, ''); // Removes dot from Hon. or Mr.
+        formalSalutation = `${title} ${surname}`;
+    } else {
+        // Fallback to surname only (e.g., Hill) or default to Member
+        formalSalutation = surname || 'Member';
+    }
+    // --- END UPDATED SALUTATION LOGIC ---
+
+
     // Build the plain text letter
     const letterText = `
 ${userName}
 ${userAddress}
 ${currentDate}
 
-The Hon. ${mpName}
+${mpName}
 Member for ${addressParts}
 
 Parliament House
 Canberra ACT 2600
 
-Dear ${salutation},
+Dear ${formalSalutation},
 
 I am writing to express my deep concern about the Federal Government’s 2021 amendment to the Motor Vehicle Standards Act, which removed e-bikes from the definition of road vehicles. While the intention may have been to encourage micromobility, the unintended consequence has been a surge in unsafe, illegal imports that now pose serious risks to Australian communities.
 
@@ -269,8 +291,6 @@ I respectfully ask that you raise this issue in Parliament and advocate for urge
 Yours sincerely,
 
 ${userName}
-
-*Sources for credibility: Pedal Power ACT, We Ride Australia, Flow Mountain Bike.
 `;
         
     // Populate the output area
